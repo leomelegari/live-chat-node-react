@@ -26,7 +26,6 @@ export const Chat = ({ socket }: ChatProps) => {
 
     socket.on("received_message", handleMessageReceived);
 
-    // Retorne uma função de limpeza que desliga o evento
     return () => {
       socket.off("received_message", handleMessageReceived);
     };
